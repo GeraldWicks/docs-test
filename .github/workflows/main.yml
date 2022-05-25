@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Show git version
+      run: git --version
 
     - name: Generate static docs files
       uses: actions/setup-node@v2
