@@ -24,10 +24,8 @@ jobs:
     
     - name: Init new repo in dist folder and commit generated files
       run: |
-        git init
-        git config --local --add safe.directory "./*"
-        git config --local --list 
         cd docs/
+        git init
         git add -A
         git config --local user.email "action@github.com" 
         git config --local user.name "GitHub Action"
@@ -46,3 +44,4 @@ jobs:
         # We have to push from the folder where files were generated.
         # Same were the new repo was initialized in the previous step
         directory: ./docs
+    - run: pwd 
