@@ -14,7 +14,6 @@ jobs:
         pwd
         ls
         git config --global --add safe.directory '*'
-        git config --local --add safe.directory '*'
       
     - uses: actions/checkout@v2
     
@@ -33,6 +32,7 @@ jobs:
         git config --local user.email "action@github.com" 
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
+        git config --local --add safe.directory '*'
         git config --local --list 
      
     - name: Force push to destination branch
