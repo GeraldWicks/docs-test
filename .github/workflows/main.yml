@@ -13,10 +13,7 @@ jobs:
       options: --user root
     steps:
     - name: Solving permission issue
-      run: |
-        git config --system --add safe.directory /docs
-        git config --global --add safe.directory '*'
-        sudo chown -R username:group /docs
+      run: git config --system --add safe.directory /docs
            
     
     - uses: actions/checkout@v2
