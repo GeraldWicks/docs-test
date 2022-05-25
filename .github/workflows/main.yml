@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Solving permission issue
-      run: sudo git config --system --add safe.directory $GITHUB_WORKSPACE/docs
+      run: sudo -u ubuntu -- git status
+      #run: sudo git config --system --add safe.directory $GITHUB_WORKSPACE/docs
       
            
     
@@ -30,7 +31,6 @@ jobs:
         git add -A
         git config --local user.email "action@github.com" 
         git config --local user.name "GitHub Action"
-        sudo git config --system --add safe.directory $GITHUB_WORKSPACE/docs
         git commit -m 'deploy'
  
      
