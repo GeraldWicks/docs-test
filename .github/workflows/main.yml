@@ -11,8 +11,8 @@ jobs:
     steps:
     - name: Solving permission issue
       run: |
-        git config --global --add safe.directory *
-        git config --system --add safe.directory *
+        git config --global --add safe.directory '*'
+        git config --system --add safe.directory '*'
       
     - uses: actions/checkout@v2
     
@@ -26,7 +26,7 @@ jobs:
     - name: Init new repo in dist folder and commit generated files
       run: |
         git init
-        git config --local --add safe.directory *
+        git config --local --add safe.directory '*'
         git config --local --list 
         cd docs/
         git add -A
