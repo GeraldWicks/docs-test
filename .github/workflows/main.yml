@@ -25,7 +25,6 @@ jobs:
         git add -A
         git config --local user.email "action@github.com" 
         git config --local user.name "GitHub Action"
-        git config --global --add safe.directory /github/workspace/docs/.src
         git commit -m 'deploy'
         
     - name: Force push to destination branch
@@ -41,3 +40,4 @@ jobs:
         # We have to push from the folder where files were generated.
         # Same were the new repo was initialized in the previous step
         directory: ./docs/.src
+    - run: git config --global --add safe.directory /github/workspace/docs/.src
