@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Solving permission issue
-      run: git config --global --add safe.directory $GITHUB_WORKSPACE/docs             
+      run: git config --global --add safe.directory $GITHUB_WORKSPACE           
     
     - uses: actions/checkout@v2
     
