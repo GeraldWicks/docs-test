@@ -21,7 +21,7 @@ jobs:
     - name: Solving permission issue
       run: |
         ls
-        git config --global --add safe.directory /docs-test/docs
+        git config --global --add safe.directory /geraldwicks/docs-test/docs
         git config -l
 
     
