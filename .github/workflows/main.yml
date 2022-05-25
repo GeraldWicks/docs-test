@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Solving permission issue
-      run: git config --global --add safe.directory /__w/GeraldWicks/docs-test/docs
+      run: git config --global --add safe.directory $PWD/docs
     
     - uses: actions/checkout@v2
     
