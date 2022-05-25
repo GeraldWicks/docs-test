@@ -20,7 +20,7 @@ jobs:
     
     - name: Solving permission issue
       run: |
-        git config --global --add safe.directory https://github.com/GeraldWicks/docs-test/docs/.src
+        git config --global --add safe.directory /__w/GeraldWicks/docs-test/docs/.src
         git config -l
 
     
