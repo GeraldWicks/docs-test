@@ -13,6 +13,7 @@ jobs:
       run: |
         echo $HOME/docs
         sudo git config --system --add safe.directory /home/runner/work/docs-test/docs-test/docs
+        cp $HOME/.gitconfig    /home/runner/work/docs-test/docs-test/docs  
         
       
     - uses: actions/checkout@v2
