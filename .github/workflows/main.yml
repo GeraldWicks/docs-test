@@ -16,17 +16,17 @@ jobs:
       with:
         node-version: '16'
     - run: npm ci
-    - run: npx typedoc src/* --out docs/.src
+    - run: npx typedoc src/* --out docs/
     
     - name: Solving permission issue
       run: |
-        git config --global --add safe.directory /__w/GeraldWicks/docs-test/docs/.src
+        git config --global --add safe.directory /__w/GeraldWicks/docs-test/docs/
         git config -l
 
     
     - name: Init new repo in dist folder and commit generated files
       run: |
-        cd docs/.src
+        cd docs/
         git init
         git add -A
         git config --local user.email "action@github.com" 
