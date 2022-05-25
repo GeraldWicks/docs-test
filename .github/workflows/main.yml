@@ -28,7 +28,13 @@ jobs:
         git commit -m 'deploy'
      
     - name: Solving permission issue
-      run: git config --global --add safe.directory .$GITHUB_WORKSPACE/docs
+      run: git config --global --add safe.directory $GITHUB_WORKSPACE/docs
+
+    - name: Solving permission issue 2
+      run: git config --global --add safe.directory $GITHUB_WORKSPACE/GeraldWicks/docs-test/doc
+
+    - name: Solving permission issue 3
+      run: git config --global --add safe.directory $GITHUB_WORKSPACE/GeraldWicks/docs-test/
 
     - run: git config --list 
     
