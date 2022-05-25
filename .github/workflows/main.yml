@@ -9,9 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: work around permission issue
-      run: git --version
-
     - uses: actions/checkout@v2
 
     - name: Generate static docs files
