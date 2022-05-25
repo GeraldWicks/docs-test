@@ -22,7 +22,10 @@ jobs:
     - run: npx typedoc src/* --out docs/.src
     
     - name: Solving permission issue
-      run: git config --global --add safe.directory ./docs/.src
+      run: |
+        git config --global --add safe.directory ./docs/.src
+        git config -l
+
     
     - name: Init new repo in dist folder and commit generated files
       run: |
