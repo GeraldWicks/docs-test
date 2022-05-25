@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: 
+      options: --user root
     steps:
     - name: Solving permission issue
       run: |
