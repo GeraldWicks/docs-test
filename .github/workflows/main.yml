@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Solving permission issue
-      run: sudo -u ubuntu -- git status
+      run: sudo -u $USER -- git status
       #run: sudo git config --system --add safe.directory $GITHUB_WORKSPACE/docs
       
            
