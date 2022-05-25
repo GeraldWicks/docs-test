@@ -30,7 +30,7 @@ jobs:
         git add -A
         git config --local user.email "action@github.com" 
         git config --local user.name "GitHub Action"
-        sudo git config --local --add safe.directory *
+        sudo git config --local --add safe.directory '*'
         git commit -m 'deploy' 
      
     - name: Force push to destination branch
