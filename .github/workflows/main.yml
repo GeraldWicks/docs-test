@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Solving permission issue
+      run: git config --global --add safe.directory /__w/GeraldWicks/docs-test/docs
+    
     - uses: actions/checkout@v2
     
     - name: Generate static docs files
@@ -17,13 +20,6 @@ jobs:
         node-version: '16'
     - run: npm ci
     - run: npx typedoc src/* --out docs/
-    
-    - name: Solving permission issue
-      run: |
-        ls
-        sudo git config --global --add safe.directory '*'
-        git config -l
-
     
     - name: Init new repo in dist folder and commit generated files
       run: |
