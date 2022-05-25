@@ -10,11 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Solving permission issue
-      run: echo $USER
+      run: sudo -u runner -- git status
       #run: sudo git config --system --add safe.directory $GITHUB_WORKSPACE/docs
       
-           
-    
     - uses: actions/checkout@v2
     
     - name: Generate static docs files
