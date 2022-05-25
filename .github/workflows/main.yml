@@ -11,8 +11,8 @@ jobs:
     steps:
     - name: Solving permission issue
       run: |
-        git config --global --add safe.directory '*'
-        git config --system --add safe.directory '*'
+        git config --global --add safe.directory "*"
+        git config --system --add safe.directory "*"
       
     - uses: actions/checkout@v2
     
