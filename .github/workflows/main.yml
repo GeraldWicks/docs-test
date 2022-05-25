@@ -8,12 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: 
-      image:  cirrusci/flutter:v1.7.8-hotfix.4
-      options: --user root
     steps:
     - name: Solving permission issue
-      run: git config --system --add safe.directory /docs
+      run: git config --system --add safe.directory /__w/docs-test/docs-test/docs.git
            
     
     - uses: actions/checkout@v2
