@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: work around permission issue
-      run: sudo apt install git=1:2.17.0-1ubuntu1
+      run: git --version
 
     - uses: actions/checkout@v2
 
