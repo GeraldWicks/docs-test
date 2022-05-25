@@ -11,6 +11,9 @@ jobs:
     steps:
     - name: Solving permission issue
       run: |
+        cd ~
+        cd $GITHUB_WORKSPACE
+        ls
         git config --global --add safe.directory /home/runner/work/docs-test/docs-test/docs
       
     - uses: actions/checkout@v2
