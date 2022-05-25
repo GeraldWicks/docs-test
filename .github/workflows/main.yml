@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Solving permission issue
       run: |
-        echo $GITHUB_WORKSPACE/docs
+        echo $HOME/docs
         sudo git config --system --add safe.directory /home/runner/work/docs-test/docs-test/docs
         
       
@@ -31,9 +31,7 @@ jobs:
         git add -A
         git config --local user.email "action@github.com" 
         git config --local user.name "GitHub Action"
-        git commit -m 'deploy'
-        cd -
- 
+        git commit -m 'deploy' 
      
     - name: Force push to destination branch
       uses: ad-m/github-push-action@v0.5.0
