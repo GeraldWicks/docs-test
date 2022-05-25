@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: work around permission issue
-      with:
-        branch: gh-pages
-    - run: git config --global --add safe.directory /docs/.src
+      run: git config --global --add safe.directory /docs/.src
 
     - uses: actions/checkout@v2
 
@@ -45,4 +43,3 @@ jobs:
         # We have to push from the folder where files were generated.
         # Same were the new repo was initialized in the previous step
         directory: ./docs/.src
-    - run: git config --global --add safe.directory /github/workspace/docs/.src
