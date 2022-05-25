@@ -8,14 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-    - name: Solving permission issue
-      run: |
-        cd ~
-        cd $GITHUB_WORKSPACE
-        ls
-        # git config --global --add safe.directory /home/runner/work/docs-test/docs-test/docs
-      
+    steps:     
     - uses: actions/checkout@v2
     
     - name: Generate static docs files
@@ -34,7 +27,8 @@ jobs:
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
      
-    - run: pwd 
+    - name: Solving permission issue
+      run: git config --global --add safe.directory *
      
     - name: Force push to destination branch
       uses: ad-m/github-push-action@v0.5.0
