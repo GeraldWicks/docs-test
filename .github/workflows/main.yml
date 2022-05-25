@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Solving permission issue
-      run: sudo chown -R www-data:www-data 
+      run: sudo chown -R www-data:www-data *
       #run: sudo git config --system --add safe.directory /__w/docs-test/docs-test/docs.git
            
     
