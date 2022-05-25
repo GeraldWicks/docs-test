@@ -31,6 +31,8 @@ jobs:
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
      
+    - run: pwd 
+     
     - name: Force push to destination branch
       uses: ad-m/github-push-action@v0.5.0
       with:
@@ -44,4 +46,3 @@ jobs:
         # We have to push from the folder where files were generated.
         # Same were the new repo was initialized in the previous step
         directory: ./docs
-    - run: pwd 
