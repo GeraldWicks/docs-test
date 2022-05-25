@@ -12,7 +12,7 @@ jobs:
     - name: Solving permission issue
       run: |
         echo $GITHUB_WORKSPACE/docs
-        sudo git config --system --add safe.directory $GITHUB_WORKSPACE/docs
+        sudo git config --system --add safe.directory /home/runner/work/docs-test/docs-test/docs
       
     - uses: actions/checkout@v2
     
