@@ -21,7 +21,7 @@ jobs:
     - name: Solving permission issue
       run: |
         ls
-        sudo git config --global --add safe.directory /github/workspace/docs
+        sudo git config --global --add safe.directory '*'
         git config -l
 
     
