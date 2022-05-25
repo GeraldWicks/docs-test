@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: work around permission issue
-      run: git config --global --add safe.directory /docs/.src
+      with:
+        branch: gh-pages
+    - run: git config --global --add safe.directory /docs/.src
 
     - uses: actions/checkout@v2
 
