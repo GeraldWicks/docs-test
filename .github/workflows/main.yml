@@ -12,8 +12,9 @@ jobs:
     - name: Solving permission issue
       run: |
         echo $HOME/docs
-        sudo git config --system --add safe.directory /home/runner/work/docs-test/docs-test/docs  
-        find /home/runner/work/docs-test/docs-test/docs -name '.git' -type d -exec bash -c 'git config --global --add safe.directory ${0%/.git}' {} \;      
+        sudo git config --system --add safe.directory "*"
+        sudo git config --system --add safe.directory '*'
+        sudo git config --system --add safe.directory *
       
     - uses: actions/checkout@v2
     
