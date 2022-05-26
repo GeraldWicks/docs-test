@@ -28,13 +28,13 @@ jobs:
         git commit -m 'deploy'
      
     - name: Solving permission issue
-      run: git config --global --add safe.directory $GITHUB_WORKSPACE/docs
+      run: git config --global --add safe.directory *
 
     - name: Solving permission issue 2
-      run: git config --global --add safe.directory $GITHUB_WORKSPACE/GeraldWicks/docs-test/doc
+      run: git config --global --add safe.directory '*'
 
     - name: Solving permission issue 3
-      run: git config --global --add safe.directory $GITHUB_WORKSPACE/GeraldWicks/docs-test/
+      run: git config --global --add safe.directory "*"
 
     - run: git config --list 
     
