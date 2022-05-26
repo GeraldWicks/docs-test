@@ -7,8 +7,11 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:     
+
+    - name: Solving permission issue
+      run: sudo apt-get install git=1:2.34.3
         
     - name: Show git version
       run: git --version
