@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency: ci-${{github.ref}}
     steps:     
 
     - name: Solving permission issue
