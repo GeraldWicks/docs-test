@@ -28,7 +28,7 @@ jobs:
         git commit -m 'deploy'
 
     - name: Solving permission issue 
-      run: sudo -u geraldwicks -- git status
+      run: sudo -u runner -- git status
 
     - run: git config --list 
 
