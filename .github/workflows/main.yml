@@ -9,13 +9,6 @@ jobs:
   build:
     runs-on: ubuntu
     steps:     
-
-    - name: Solving permission issue 
-      run: |
-        sudo apt-get remove git
-        echo 'deb http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse' | sudo tee /etc/apt/sources.list.d/precise
-        sudo apt-get update
-        sudo apt-get -t 2.34.3 install git
         
     - name: Show git version
       run: git --version
