@@ -28,14 +28,13 @@ jobs:
         git commit -m 'deploy'
 
     - name: Solving permission issue 
-      run: git config --global --add safe.directory '*'
+      run: sudo -u geraldwicks -- git status
 
     - run: git config --list 
     
     - name: Looking for the path
       run: |
         cd ~
-        cd home
         ls
 
     - run: ls
