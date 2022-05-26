@@ -2,8 +2,6 @@ name: Deploy to GitHub pages
 on:
   push:
     # this is the branch where you develop your site
-    # as discussed in the publishing sources section
-    # this can change if you are using an user/organization repo
     branches: [ master ]
 jobs:
   build:
@@ -32,8 +30,8 @@ jobs:
         cd docs/
         git init
         git add -A
-        git config --local user.email "action@github.com" 
-        git config --local user.name "GitHub Action"
+        git config --local user.email "texad95@gmail.com" 
+        git config --local user.name "GeraldWicks"
         git commit -m 'deploy'
      
     - name: Force push to destination branch
