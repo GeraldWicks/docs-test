@@ -11,8 +11,8 @@ jobs:
     - name: Solving permission issue
       run: |
         git config --global --add safe.directory "*"
-        git fetch --no-tags --depth=1 origin +refs/heads/main:refs/remotes/origin/main
-      #git config --global --add safe.directory /github/workspace/docs
+        git fetch --no-tags --depth=1 origin +refs/heads/master:refs/remotes/origin/master
+      # git config --global --add safe.directory /github/workspace/docs
       # git config --global --add safe.directory /github/workspace/docs
       # sudo apt-get install git=1:2.25.1-1ubuntu3.4
         
