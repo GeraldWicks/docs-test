@@ -10,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:     
 
-    - name: Solving permission issue
-      run: pip install git+https://github.com/aladagemre/django-notification.git@v2.1.0
-      #sudo apt-get install git=2.34.3
+    #- name: Solving permission issue
+    #  run: sudo apt-get install git=2.34.3
         
     - name: Show git version
-      run: git --version
+      run: apt-cache madison git
 
     - uses: actions/checkout@v2
     
