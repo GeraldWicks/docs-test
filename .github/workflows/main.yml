@@ -1,4 +1,4 @@
-name: Deploy to GitHub pages
+name: Deploy docs to GitHub pages
 on:
   push:
     # this is the branch where you develop your site
@@ -9,45 +9,21 @@ jobs:
     concurrency: ci-${{github.ref}}
     steps:     
 
-    - name: Solving permission issue
-      run: |
-        git config --global --add safe.directory "*"
-      # git config --global --add safe.directory /github/workspace/docs
-      # git config --global --add safe.directory /github/workspace/docs
-      # sudo apt-get install git=1:2.25.1-1ubuntu3.4
-        
-    - name: Show git config
-      run: git config --global --list
-
     - name: checkout
       uses: actions/checkout@v2
     
     - name: Generate static docs files
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v1
       with:
-        node-version: '16'
-    - run: npm ci
-    - run: npx typedoc src/* --out docs/
-    
-    - name: Init new repo in dist folder and commit generated files
+        node-version: '12.18.4'
+
+    - name: Install
       run: |
-        cd docs/
-        git init
-        git add -A
-        git config --local user.email "action@github.com" 
-        git config --local user.name "GitHub Action"
-        git commit -m 'deploy'
-     
-    - name: Force push to destination branch
-      uses: ad-m/github-push-action@v0.5.0
+        npm ci
+        npx typedoc src/* --out docs/
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        # Token for the repo
-        # Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        # Destination branch to push changes
-        branch: gh-pages
-        # Use force push to fully overwrite the destination branch
-        force: true
-        # We have to push from the folder where files were generated.
-        # Same were the new repo was initialized in the previous step
-        directory: ./docs
+         folder: docs
+         branch: gh-pages
