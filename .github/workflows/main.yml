@@ -30,12 +30,13 @@ jobs:
     - name: Solving permission issue 
       run: git config --global --add safe.directory '*'
 
-    - name: Solving permission issue 2
-      run: git config --global --add safe.directory "*"
-
     - run: git config --list 
     
-    - run: pwd
+    - name: Looking for the path
+      run: |
+        cd ~
+        cd home
+        ls
 
     - run: ls
      
