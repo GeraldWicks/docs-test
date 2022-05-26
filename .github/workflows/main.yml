@@ -9,14 +9,15 @@ jobs:
     steps:     
 
     - name: Solving permission issue
-      run: git config --global --add safe.directory /github/workspace/docs
+      run: git config --global --add safe.directory /__w/GeraldWicks/docs-test/docs
       # git config --global --add safe.directory /github/workspace/docs
       # sudo apt-get install git=1:2.25.1-1ubuntu3.4
         
     - name: Show git config
       run: git config --global --list
 
-    - uses: actions/checkout@v2
+    - name: checkout
+      uses: actions/checkout@v2
     
     - name: Generate static docs files
       uses: actions/setup-node@v2
@@ -30,8 +31,8 @@ jobs:
         cd docs/
         git init
         git add -A
-        git config --local user.email "texad95@gmail.com" 
-        git config --local user.name "GeraldWicks"
+        git config --local user.email "action@github.com" 
+        git config --local user.name "GitHub Action"
         git commit -m 'deploy'
      
     - name: Force push to destination branch
