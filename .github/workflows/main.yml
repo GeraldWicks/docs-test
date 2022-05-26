@@ -9,6 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:     
+
+    - name: Solving permission issue 
+      run: sudo apt-get install git
+
+    - run: git --version
+
     - uses: actions/checkout@v2
     
     - name: Generate static docs files
@@ -26,9 +32,6 @@ jobs:
         git config --local user.email "action@github.com" 
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
-
-    - name: Solving permission issue 
-      run: sudo -u runner -- git status
 
     - run: git config --list 
 
