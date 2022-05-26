@@ -31,11 +31,6 @@ jobs:
       run: sudo -u geraldwicks -- git status
 
     - run: git config --list 
-    
-    - name: Looking for the path
-      run: |
-        cd ~
-        ls
 
     - run: ls
      
