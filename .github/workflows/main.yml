@@ -26,14 +26,11 @@ jobs:
         git config --local user.email "action@github.com" 
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
-     
-    - name: Solving permission issue
-      run: git config --global --add safe.directory *
 
-    - name: Solving permission issue 2
+    - name: Solving permission issue 
       run: git config --global --add safe.directory '*'
 
-    - name: Solving permission issue 3
+    - name: Solving permission issue 2
       run: git config --global --add safe.directory "*"
 
     - run: git config --list 
