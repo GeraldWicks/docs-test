@@ -16,8 +16,9 @@ jobs:
         echo 'deb http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse' | sudo tee /etc/apt/sources.list.d/precise
         sudo apt-get update
         sudo apt-get -t precise install git
-
-    - run: git --version
+        
+    - name: Show git version
+      run: git --version
 
     - uses: actions/checkout@v2
     
